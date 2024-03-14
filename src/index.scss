@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+$light-yellow: #fff2cc;
+$dandelion: #ffd966;
+$soft-orange: #f4b183;
+$soft-brown: #dfa67b;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;
+}
+
+body {
+  background-color: $light-yellow;
+  height: 100vh;
+  font-family: Inter, sans-serif;
+
+  #root {
+    height: 100%;
+    width: 100%;
+  }
+
+  main {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .card {
+      border-radius: 20px;
+      width: 489px;
+      height: 600px;
+      background-color: $dandelion;
+      box-shadow: 0 25px 121px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      margin-top: 3rem;
+      font-size: 2.1rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      width: 200px;
+      text-align: center;
+      letter-spacing: 1px;
+      opacity: 0.7;
+    }
+
+    .count {
+      font-size: 12rem;
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+
+    .reset-button {
+      margin-bottom: 3.5rem;
+      cursor: pointer;
+
+      .reset-button-icon {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+
+    .reset-button-icon,
+    .minus-button-icon,
+    .plus-button-icon {
+      opacity: 0.7;
+    }
+
+    .count-container {
+      justify-content: space-evenly;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      background-color: $soft-orange;
+      border-radius: 0 0 20px 20px;
+
+      .count-button {
+        cursor: pointer;
+        &:first-child {
+          border-right: 1px solid $dandelion;
+
+          &:hover {
+            border-radius: 0 0 0 20px;
+          }
+        }
+
+        &:nth-child(2) {
+          &:hover {
+            border-radius: 0 0 20px 0;
+          }
+        }
+
+        &:hover {
+          background-color: $soft-brown;
+        }
+      }
+
+      .minus-button-icon,
+      .plus-button-icon {
+        width: 3rem;
+        height: 3rem;
+        opacity: 0.7;
+      }
+
+      button {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
