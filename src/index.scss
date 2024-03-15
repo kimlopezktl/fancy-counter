@@ -88,18 +88,21 @@ body {
         &:first-child {
           border-right: 1px solid $dandelion;
 
-          &:hover {
+          &:hover,
+          &.disabled {
             border-radius: 0 0 0 20px;
           }
         }
 
         &:nth-child(2) {
-          &:hover {
+          &:hover,
+          &.disabled {
             border-radius: 0 0 20px 0;
           }
         }
 
-        &:hover {
+        &:hover,
+        &.disabled {
           background-color: $soft-brown;
         }
       }

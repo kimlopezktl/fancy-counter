@@ -10,11 +10,13 @@ import Count from "./count";
 // - [x] Increase using space bar
 // - [x] Reset button
 // - [x] Reset using ESC button
-// - Add a limit -> if limit is reached, disabled increase and decrease button.
-//   Only the reset button is clickable.
+// - [x] Add a limit -> if limit is reached, disabled increase and decrease button. Only the reset button is clickable.
 function Card() {
-  const title = "Fancy counter";
   const [count, setCount] = useState(0);
+
+  const limit = 10;
+  const locked = count === limit;
+  const title = count !== limit ? "Fancy counter" : "Limit Reached";
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
@@ -37,7 +39,9 @@ function Card() {
   };
 
   const handleIncreaseCount = (event) => {
-    setCount(count + 1);
+    if (count < limit) {
+      setCount(count + 1);
+    }
     event.currentTarget.blur();
   };
 
@@ -58,8 +62,8 @@ function Card() {
         onClick={handleResetCount}
       />
       <ButtonContainer>
-        <Button type="minus" onClick={handleDecreaseCount} />
-        <Button type="plus" onClick={handleIncreaseCount} />
+        <Button type="minus" onClick={handleDecreaseCount} locked={locked} />
+        <Button type="plus" onClick={handleIncreaseCount} locked={locked} />
       </ButtonContainer>
     </div>
   );
