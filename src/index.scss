@@ -74,7 +74,7 @@ body {
       opacity: 0.7;
     }
 
-    .count-container {
+    .button-container {
       justify-content: space-evenly;
       display: flex;
       width: 100%;
@@ -83,7 +83,7 @@ body {
       background-color: $soft-orange;
       border-radius: 0 0 20px 20px;
 
-      .count-button {
+      button {
         cursor: pointer;
         &:first-child {
           border-right: 1px solid $dandelion;

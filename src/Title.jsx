@@ -1,5 +1,5 @@
-function Title() {
-  return <h1 className="title">Fancy Counter</h1>;
+function Title({ title = "" }) {
+  return <h1 className="title">{title}</h1>;
 }
 
 export default Title;

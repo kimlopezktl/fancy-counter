@@ -1,5 +1,3 @@
-function Count() {
-  return <p className="count">0</p>;
+export default function Count({ count = 0 }) {
+  return <p className="count">{count}</p>;
 }
-
-export default Count;

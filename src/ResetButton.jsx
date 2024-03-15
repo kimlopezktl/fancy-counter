@@ -1,8 +1,8 @@
 import { ResetIcon } from "@radix-ui/react-icons";
 
-function ResetButton() {
+function ResetButton({ onClick = {} }) {
   return (
-    <button className="reset-button">
+    <button className="reset-button" onClick={onClick}>
       <ResetIcon className="reset-button-icon" />
     </button>
   );
